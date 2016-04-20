@@ -1,4 +1,4 @@
-<form ng-submit="postsNewCtrl.create()">
+<form ng-show="main.currentUser.isLoggedIn()" ng-submit="postsNewCtrl.create()">
   <div class="form-group">
     <input type="text" class="form-control" placeholder="Title" ng-model="postsNewCtrl.post.title">
   </div>
