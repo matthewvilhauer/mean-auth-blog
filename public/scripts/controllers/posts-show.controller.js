@@ -14,6 +14,7 @@ function PostsShowController ($location, $http, $routeParams) {
       .then(onShowSuccess, onShowError);
 
     function onShowSuccess(response){
+      console.log("Show Response: ",response.data);
       vm.post = response.data;
     }
 
