@@ -49,6 +49,27 @@ function configRoutes($routeProvider, $locationProvider) {
       controller: 'PostsIndexController',
       controllerAs: 'home'
     })
+    .when('/posts/new', {
+      templateUrl: 'templates/posts/new.html',
+      controller: 'PostsNewController',
+      controllerAs: 'postsNewCtrl',
+      resolve: {
+        loginRequired: loginRequired // this is the important part
+      }
+    })
+    .when('/posts/:id', {
+      templateUrl: 'templates/posts/show.html',
+      controller: 'PostsShowController',
+      controllerAs: 'postsShowCtrl'
+    })
+    .when('/posts/:id/edit', {
+      templateUrl: 'templates/posts/edit.html',
+      controller: 'PostsEditController',
+      controllerAs: 'postsEditCtrl',
+      resolve: {
+        loginRequired: loginRequired // this is the important part
+      }
+    })
     .otherwise({redirectTo: '/'});
 
 
